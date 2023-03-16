@@ -1,0 +1,1 @@
+export const sayHelloFn = () => console.log('Hello');

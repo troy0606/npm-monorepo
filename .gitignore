@@ -5,7 +5,5 @@
 # node_modules
 **/node_modules
 
-# frontend sftp
-/custom/holastorefront/.vscode/sftp.json
 # vscode workspace setting config
 **/.vscode/settings.json

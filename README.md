@@ -24,5 +24,14 @@
   安裝lodash@3 到 packages/App2
   npm i lodash@3 --workspace=app2
 
-全域安裝 qs
-npm i qs
+  全域安裝 qs
+  npm i qs
+
+  新增workspace Lib
+  npm init -w ./packages/Lib
+
+  /packages/Lib/package.json
+  新增index.tsx
+
+  手動新增aaa.js
+  依照common js 模組語法export
