@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start react-typescript": "npm run start --workspace=react-typecsript-demo"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +14,5 @@
   ],
   "devDependencies": {
     "typescript": "^4.9.5"
-  },
-  "dependencies": {
-    "qs": "^6.11.1"
   }
 }
