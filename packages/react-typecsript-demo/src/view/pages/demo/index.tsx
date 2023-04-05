@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import DemoLink from "./content/demoLink";
-import UseStateDemo from "./content/usestate";
+import UseStateDemo from "./content/useState";
+import UseEffect from "./content/useEffect";
+import UseRef from "./content/useRef";
 
 export default function index() {
   return (
@@ -9,7 +11,8 @@ export default function index() {
       <DemoLink/>
       <Routes>
         <Route path="usestate" element={<UseStateDemo />} />
-        <Route path="useState" element={<UseStateDemo />} />
+        <Route path="useeffect" element={<UseEffect />} />
+        <Route path="useref" element={<UseRef />} />
       </Routes>
     </>
   );

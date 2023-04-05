@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Count from "./count";
-import Test from "./test";
+import Count from "./Count";
+import Test from "./Test";
 
 export default function Index() {
   const [mutualState, setMutualState] = useState(true);
@@ -8,6 +8,8 @@ export default function Index() {
   useEffect(()=>console.log("re-render Demo Index Component"));
   return (
     <>
+      <h2>UseState</h2>
+      <hr />
       <h3>mutualState: {JSON.stringify(parentObj)}</h3>
       <br />
       <h3>mutualStateObject: {mutualState? 'true': 'false'}</h3>

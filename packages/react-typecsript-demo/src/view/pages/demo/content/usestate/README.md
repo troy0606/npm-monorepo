@@ -71,3 +71,14 @@
   1. Every render (and functions inside it) will always “see” the snapshot of the state that React gave to that render.
   1. You can mentally substitute state in event handlers, similarly to how you think about the rendered JSX.
   1. Event handlers created in the past have the state values from the render in which they were created.
+
+  Queueing a Series of State Updates
+
+  Setting state does not change the variable in the existing render, but it requests a new render.
+React processes state updates after event handlers have finished running. This is called batching.
+To update some state multiple times in one event, you can use setNumber(n => n + 1) updater function.
+
+
+react 元件渲染其實就是 呼叫 render(class 元件) function (函式型元件)，當下會產生類似 snapShot 的動作(不確定與 virturl dom 的關係)，下次有 event 觸發 setState 時，會觸發batch 批處理(react 對於多個setState的優化，類似將 state 更新動作放到一個 queue 裡，最後算出更新的 值 才是真正拿去更新state )，React 不會在多個有意義的事件（例如點擊）之間進行批處理，每個點擊都會單獨處理。請放心，React 只在通常情況下安全時才進行批處理。這確保了，例如，如果第一次按鈕點擊禁用了表單，第二次點擊不會再次提交它。
+
+更新state後會再次觸發 render 導致元件更新，創造新的snapShot，當snapShot 與前次比較有差異，則會在commit階段實際更新有差異的 DOM
