@@ -1,4 +1,4 @@
-import { axiosBase } from "../api/header";
+import { axiosBase } from "./request";
 import { ITodo, ITodoList } from "../redux/todos";
 
 export const apiGetToDoListData = () => axiosBase.get<ITodoList>('todos');

@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
 
-export default function DemoLink() {
+export default function DemoLink<T>(linkData: T) {
   return (
     <ul>
-      <li>
-        <Link to={`usestate`}>useState demo</Link>
-      </li>
-      <li>
-        <Link to={`useeffect`}>useEffect demo</Link>
-      </li>
-      <li>
-        <Link to={`useref`}>useRef demo</Link>
-      </li>
+      {linkData.map((linkObject) => (
+        <li>
+          <Link to={`usestate`}>useState demo</Link>
+        </li>
+      ))}
     </ul>
   );
 }
