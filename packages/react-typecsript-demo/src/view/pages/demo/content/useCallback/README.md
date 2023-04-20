@@ -44,7 +44,7 @@ useCallback是一個 React Hook，可讓您在重新渲染之間緩存函數定�
 1. 當函數作為useEffect的dependency導致rerender後子元件重新渲染
 
    ```javascript
-  function ChatRoom({ roomId }) {
+    function ChatRoom({ roomId }) {
     const [message, setMessage] = useState('');
 
     function createOptions() {
@@ -61,33 +61,5 @@ useCallback是一個 React Hook，可讓您在重新渲染之間緩存函數定�
       // ...
    ```
 
-1. 操作DOM(使用瀏覽器API)
-   ```javascript
-      import { useRef } from 'react';
-
-      export default function Form() {
-        const inputRef = useRef(null);
-
-        function handleClick() {
-          inputRef.current.focus();
-        }
-
-        return (
-          <>
-            <input 
-              ref={inputRef} 
-              // 使用函示寫法可以讓ref指向node時，做一些額外的處理，需要指向node的時間點
-              ref={(node)=> inputRef.current = node}
-            />
-            <button onClick={handleClick}>
-              Focus the input
-            </button>
-          </>
-        );
-      }
-   ```
-
-
 ### 注意事項
-1. 請不要在render階段使用
-1. 使用ref保存DOM，會在commit階段，更新DOM之前先將ref設為Null，更新DOM之後，會再將ref指向DOM
+1. 
