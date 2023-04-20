@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ReferencingDom() {
   const inputRef = useRef(
@@ -17,6 +17,10 @@ export default function ReferencingDom() {
   function increaseCount() {
     setCount(count + 1);
   }
+
+  useEffect(()=>{
+    console.log('update ReferencingDom'); 
+  })
 
   return (
     <>

@@ -1,21 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import DemoLink from "./content/demoLink";
 import UseStateDemo from "./content/useState";
 import UseEffect from "./content/useEffect";
 import UseRef from "./content/useRef";
 import UseCallBack from "./content/useCallback";
+import { TArrayGeneric, TlinkObject } from "../../../models/types/common";
+import RouteLayout from "./content/RouteLayout";
 
 export default function index() {
 
-  type linkObject = {
-    path: string;
-    element: JSX.Element;
-    name: string;
-  }
-
-  type links = Array<linkObject>;
-
-  const linkData: links = [{
+  const linkData: TArrayGeneric<TlinkObject> = [{
     path: "usestate",
     element: <UseStateDemo />,
     name: "useState demo"
@@ -40,13 +32,7 @@ export default function index() {
   return (
     <>
     <h4>Demo Place</h4>
-      <DemoLink linkData={linkData}/>
-      <Routes>
-        <Route path="usestate" element={<UseStateDemo />} />
-        <Route path="useeffect" element={<UseEffect />} />
-        <Route path="useref" element={<UseRef />} />
-        <Route path="usecallback" element={<UseCallBack />} />
-      </Routes>
+      <RouteLayout linkData={linkData}/>
     </>
   );
 }
