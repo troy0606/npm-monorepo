@@ -127,6 +127,7 @@
 ### 注意事項
 1. 請不要在render階段使用
 1. 使用ref保存DOM，會在commit階段，更新DOM之前先將ref設為Null，更新DOM之後，會再將ref指向DOM
+1. 使用ref保存DOM，觸發時間會在 componentDidMount 跟 componentDidUpdate 之前
 
 
 ### fowardRef(使用另一個元件的ref)

@@ -22,6 +22,10 @@ export default function ReferencingDom() {
     console.log('update ReferencingDom'); 
   })
 
+  useEffect(()=>{
+    console.log('mount ReferencingDom'); 
+  }, [])
+
   return (
     <>
       <h3>ReferencingDOM</h3>
